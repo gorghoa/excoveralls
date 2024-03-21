@@ -173,7 +173,7 @@ defmodule ExCoveralls.Cobertura do
     c_paths
     |> Enum.find_value(package_name, fn c_path ->
       if String.starts_with?(package_name, c_path) do
-        String.slice(package_name, (String.length(c_path) + 1)..-1)
+        String.slice(package_name, (String.length(c_path) + 1)..-1//1)
       else
         false
       end
